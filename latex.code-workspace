@@ -1,0 +1,154 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        // "titleBar.activeBackground": "#6ca91c91",
+        // "titleBar.inactiveBackground": "#3201b0cc",
+        // ===============================================================
+        // ============================LaTex==============================
+        // ===============================================================
+        //https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#placeholders
+        "latex-workshop.showContextMenu": true, // LaTeX右键菜单
+        "latex-workshop.bibtex-format.tab": "4 spaces",
+        "latex-workshop.intellisense.package.enabled": true, //补全代码
+        //错误和警告信息能够从终端中获取
+        "latex-workshop.message.error.show": false,
+        "latex-workshop.message.warning.show": false,
+        //输出设置
+        "latex-workshop.latex.outDir": "%DIR%/output",
+        "latex-workshop.latex.clean.subfolder.enabled": false,
+        "latex-workshop.latex.autoClean.run": "onFailed", //清除辅助文件
+        "latex-workshop.synctex.afterBuild.enabled": true,
+        //文件清理。此属性必须是字符串数组
+        "latex-workshop.latex.clean.fileTypes": [
+            "*.aux",
+            "*.bbl",
+            "*.blg",
+            "*.idx",
+            "*.ind",
+            "*.lof",
+            "*.lot",
+            "*.out",
+            "*.toc",
+            "*.acn",
+            "*.acr",
+            "*.alg",
+            "*.glg",
+            "*.glo",
+            "*.gls",
+            "*.ist",
+            "*.fls",
+            "*.log",
+            "*.fdb_latexmk"
+        ],
+        // preview 
+        "latex-workshop.view.pdf.backgroundColor": "#000000",
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.view.pdf.internal.synctex.keybinding": "ctrl-click", //反向同步
+        // ==========================编译设置===================================
+        // 设置是否自动编译
+        "latex-workshop.latex.autoBuild.run": "never", //"onFileChange","never"
+        "latex-workshop.latex.recipe.default": "lastUsed", //
+        // 编译链 name为标签，command 编译方式
+        "latex-workshop.latex.tools": [
+            {
+                "name": "xelatex",
+                "command": "xelatex",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "%DOCFILE%"
+                ]
+            },
+            {
+                "name": "pdflatex",
+                "command": "pdflatex",
+                "args": [
+                    "-synctex=1",
+                    "-output-directory==%OUTDIR%",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "%DOCFILE%"
+                ]
+            },
+            {
+                "name": "latexmk",
+                "command": "latexmk",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-pdf",
+                    "-outdir=%OUTDIR%",
+                    "%DOCFILE%"
+                ]
+            },
+            {
+                "name": "biber",
+                "command": "biber",
+                "args": [
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            },
+            {
+                "name": "bibtex",
+                "command": "bibtex",
+                "args": [
+                    "%DOCFILE%"
+                ]
+            }
+        ],
+        //编译链进行定义
+        //如果涉及到.bib文件，需要进行多次不同命令的转换编译，而编译链就解决了这个问题。
+        //name是标签，也就是出现在工具栏中的链名称；tool是name标签所对应的编译顺序
+        "latex-workshop.latex.recipes": [
+            {
+                "name": "LaTeXmk",
+                "tools": [
+                    "latexmk"
+                ]
+            },
+            {
+                "name": "XeLaTeX",
+                "tools": [
+                    "xelatex"
+                ]
+            },
+            {
+                "name": "PDFLaTeX",
+                "tools": [
+                    "pdflatex"
+                ]
+            },
+            {
+                "name": "BibTeX",
+                "tools": [
+                    "biber"
+                ]
+            },
+            {
+                "name": "xelatex -> bibtex -> xelatex*2",
+                "tools": [
+                    "xelatex",
+                    "bibtex",
+                    "xelatex",
+                    "xelatex"
+                ]
+            },
+            {
+                "name": "pdflatex -> bibtex -> pdflatex*2",
+                "tools": [
+                    "pdflatex",
+                    "bibtex",
+                    "pdflatex",
+                    "pdflatex"
+                ]
+            },
+        ],
+    }
+}
