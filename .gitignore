@@ -7,6 +7,11 @@ __pycache__/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+cache/
 
+# Sources 
+SOURCES/
+
+# Data
 .DS_Store
-8.044-spring-2013/
+data/
