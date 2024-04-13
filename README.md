@@ -2,19 +2,7 @@
 
 >  The test of all knowledge is experiment. Experiment is the *sole judge* of scientific “truth.” 
 >
-> ```
 > -- <cite>R.P.Feynman</cite>
-> ```
-
-- My solutions to the computational physics course. The course is based on the book by Giordano and Nakanishi (2005).
-
-##  Models
-
-- Classic Percolation 
-  - forest fire model ![forest fire|300X300](img/forest_fire.gif)![para sens|200x100](img/np_para_sens.jpg.jpg)
-
-- network percolation 
-
 
 
 # References
@@ -27,9 +15,7 @@
 ## Projects
 
 - Mobility-RG
-
 - [RG flow](https://github.com/hongyehu/RG-Flow)
-
 - Deep Gravity
 - hgcn
 
