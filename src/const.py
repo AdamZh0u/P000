@@ -28,7 +28,6 @@ def get_project_root():
         current_path = parent_path
 
 ROOT = get_project_root()
-PATH_DATA = ROOT / "data"
+PATH_DATA = ROOT / "_data"
 PATH_NOOTBOOKS = ROOT / "notebooks"
 PATH_LOG = ROOT / "logs"
-

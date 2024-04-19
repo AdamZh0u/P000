@@ -10,8 +10,10 @@ __pycache__/
 cache/
 
 # Sources 
-SOURCES/
+_SOURCES/
 
 # Data
 .DS_Store
-data/
+_data/
+
+ComplexityN/
