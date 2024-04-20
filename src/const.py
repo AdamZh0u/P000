@@ -6,6 +6,7 @@
 @File    : const.py
 """
 from pathlib import Path
+import datetime
 from loguru import logger
 
 def get_project_root():
@@ -17,7 +18,7 @@ def get_project_root():
             or (current_path / ".project_root").exists()
             or (current_path / ".gitignore").exists()
         ):
-            logger.info(f"PROJECT_ROOT set to {str(current_path)}")
+            
             return current_path
         parent_path = current_path.parent
         if parent_path == current_path:
@@ -28,6 +29,9 @@ def get_project_root():
         current_path = parent_path
 
 ROOT = get_project_root()
+today = datetime.datetime.now().strftime("%Y-%m-%d")
+logger.add(ROOT / "log" / f"{today}.log")
+logger.info(f"PROJECT_ROOT set to: {str(ROOT)}")
 PATH_DATA = ROOT / "_data"
 PATH_NOOTBOOKS = ROOT / "notebooks"
 PATH_LOG = ROOT / "logs"

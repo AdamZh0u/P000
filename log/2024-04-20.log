@@ -1,0 +1,6 @@
+2024-04-20 01:27:54.835 | INFO     | src.const:<module>:34 - PROJECT_ROOT set to: /Users/adamzh0u/260_Physics/P001
+2024-04-20 01:27:55.684 | INFO     | __main__:<module>:1 - Starting the program
+2024-04-20 01:33:42.128 | INFO     | __main__:<module>:2 - Number of nodes: {graph.number_of_nodes()}, Number of edges: {graph.number_of_edges()}, Number of features: {features.shape[1]}, Number of classes: {len(set(labels))}
+2024-04-20 01:33:47.269 | INFO     | __main__:<module>:2 - Number of nodes: 3188, Number of edges: 18631, Number of features: 4, Number of classes: 4
+2024-04-20 01:37:37.974 | INFO     | __main__:<module>:3 - Average degree: 11.688205771643664
+

@@ -1,7 +1,25 @@
 """mpl setup"""
 import matplotlib as mpl 
 
-def setup_mpl(as_default=1, font='en'):  # My mpl setup
+# PARAMS
+PARAMS = {
+    'hight_inch': 3.60236,
+    'width_inch': 3.5,
+    'mm_to_inch': 10/2.54,
+    'one_col_mm': 89, # default one column figure width
+    'two_col_mm': 183,
+    'height_mm': 89, 
+    'alpha': 0.6,
+    'to_rgba': mpl.colors.ColorConverter().to_rgba,
+}
+
+def setup_mpl(as_default=False, font='en'):  # My mpl setup
+    """mpl setup
+
+    Args:
+        as_default (bool, optional): Reset to default if True. Defaults to False.
+        font (str, optional): Defaults to 'en'.
+    """
     if as_default:
         mpl.rcdefaults()  # set as defult
     else:
@@ -54,27 +72,14 @@ def setup_mpl(as_default=1, font='en'):  # My mpl setup
     else:
         mpl.rcParams["font.sans-serif"] = ["Arial"]  # 设置字体
 
-    # rasterize figure
-    def save_pdf(path, fig):
-        fig.savefig(path, transparent=True)
 
-    def save_png(path, fig):
-        fig.savefig(path, transparent=True)
+# rasterize figure
+def save_pdf(path, fig):
+    fig.savefig(path, transparent=True)
 
-    # vectorize figure
-    def save_svg(path, fig):
-        fig.savefig(path, transparent=True)
+def save_png(path, fig):
+    fig.savefig(path, transparent=True)
 
-    # PARAMS
-    PARAMS = {
-        'mm_to_inch': 10/2.54,
-        'one_col_mm': 89, # default one column figure width
-        'two_col_mm': 183,
-        'height_mm': 89, 
-        'alpha': 0.6,
-        'to_rgba': mpl.colors.ColorConverter().to_rgba,
-        'save_pdf': save_pdf,
-        'save_svg': save_svg,
-        'save_png': save_png,
-    }
-    return PARAMS
+# vectorize figure
+def save_svg(path, fig):
+    fig.savefig(path, transparent=True)
