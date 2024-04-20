@@ -12,17 +12,17 @@ import scipy.sparse as sp
 
 # 
 
-def load_data_lp(dataset, use_feats, data_path):
-    if dataset in ['cora', 'pubmed']:
-        adj, features = load_citation_data(dataset, use_feats, data_path)[:2]
-    elif dataset == 'disease_lp':
-        adj, features = load_synthetic_data(dataset, use_feats, data_path)[:2]
-    elif dataset == 'airport':
-        adj, features = load_data_airport(dataset, data_path, return_label=False)
-    else:
-        raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
-    data = {'adj_train': adj, 'features': features}
-    return data
+# def load_data_lp(dataset, use_feats, data_path):
+#     if dataset in ['cora', 'pubmed']:
+#         adj, features = load_citation_data(dataset, use_feats, data_path)[:2]
+#     elif dataset == 'disease_lp':
+#         adj, features = load_synthetic_data(dataset, use_feats, data_path)[:2]
+#     elif dataset == 'airport':
+#         adj, features = load_data_airport(dataset, data_path, return_label=False)
+#     else:
+#         raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
+#     data = {'adj_train': adj, 'features': features}
+#     return data
 
 
 def load_citation_data(dataset_str, use_feats, data_path, split_seed=None):
